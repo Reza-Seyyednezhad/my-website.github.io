@@ -1,0 +1,637 @@
+body{
+    background-color: $bg-fg-color-1;
+    @include setSize(100%, auto);
+    position: relative;
+}
+.main{
+    // display: none;
+    @include setFlex(column);
+    @include setSize(100%, auto);
+    color: $bg-fg-color-3;
+    position: relative;
+    }
+    header{
+        margin: 20px auto;
+        @include setSize(85%, auto);
+        background-color: $bg-fg-color-1;
+        position: -webkit-sticky;
+        position: fixed;
+        top: 20px;
+        background-color: $bg-fg-color-1;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.8px);
+        -webkit-backdrop-filter: blur(9.8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        z-index: 10;
+        .header-nav{
+            margin: 10px auto;
+            &-up{
+                width: 95%;
+                margin: 0 auto;
+                @include setFlex(row, space-between, center);
+                flex-wrap: wrap;
+                text-align: center;
+                @media screen and (max-width: $mq-size-576) {
+                    width: 100%;
+                    justify-content: center;
+                }
+                &-btn{
+                    button{
+                        cursor: pointer;
+                        transform: scale(0.7);
+                        z-index: 5;
+                        span{
+                            span{
+                                background-color: $bg-fg-color-2;
+                                &::after, &::before{
+                                    background-color: $bg-fg-color-2;
+                                }
+                            }
+                        } 
+                    } 
+                    .is-active{
+                        border-radius: 50%;
+                        @include setFlex;
+                        transform: scale(0.7);
+                        background-color: $bg-fg-color-2;
+                    }
+                }
+                .logo{
+                    p{
+                        font-family: $font-logo;
+                        font-size: 1.5rem;
+                        @media screen and (max-width: $mq-size-768) {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            &-down{
+                background-color: $bg-fg-color-1;
+                @include setFlex(row, center, center);
+                display: none;
+                transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                &-list{
+                    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    .header-nav-down-menu{
+                        text-align: center;
+                        list-style: none;
+                        transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        &-item{
+                            margin: 10px auto;
+                            &-link{
+                                direction: rtl;
+                                text-decoration: none;
+                                color: $bg-fg-color-3;
+                                font-family: $font-text-2;
+                                font-size: 1.2rem;
+                                transition: all .5s ease-in-out;
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: 0;
+                                    height: 2px;
+                                    background-color: $bg-fg-color-3;
+                                    transition: all .5s ease-in-out
+                                    
+                                }
+                                &:hover{
+                                    letter-spacing: 2px;
+                                    &::after{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            @media screen and (max-width: $mq-size-992) {
+                margin: 20px 50px;
+            }
+            @media screen and (max-width: $mq-size-576) {
+                margin: 20px 30px;
+            }
+        }
+
+    }
+    main{
+        @include setSize(80%, auto);
+        margin: 100px auto;
+        @media screen and (max-width: $mq-size-768) {
+            width: 95%;
+        }
+        section{
+            @include setSize(100%, auto);
+            padding: 100px 0;
+            border-bottom: 2px dashed $bg-fg-color-2;
+        }
+        .main-summary{
+            text-align: center;
+            font-family: $font-text-2;
+            position: relative;
+            @include setFlex;
+            &-content{
+                margin: 0 auto;
+                text-align: center;
+                h6{
+                    font-size: 1.5rem;
+                    margin-bottom: 10px;
+                }
+                div{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: center;
+                    align-items: center;
+                    h1{
+                        margin: 20px 0;
+                        font-size: 5rem;
+                        color: $bg-fg-color-5;
+                        cursor: pointer;
+                        @media screen and (max-width: $mq-size-992) {
+                            margin: 10px 0;
+                            font-size: 4rem;
+                        }
+                    }
+            }
+            
+                @media screen and (max-width: $mq-size-576) {
+                    flex-direction: column;
+                }
+            }
+            h3{
+                font-size: 3rem;
+                margin-bottom: 100px;
+                @media screen and (max-width: $mq-size-992) {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+        .main-about{
+            &-content{
+                margin: 50px 0;
+                @include setSize(100%, auto);
+                @include setFlex(row, space-around, center);
+                padding: 20px 0;
+                @media screen and (max-width: $mq-size-992) {
+                    flex-wrap: wrap;
+                    flex-direction: column-reverse;
+                }
+                // @media screen and (max-width: $mq-size-576) {
+                //     width: 90%;
+                // }
+                &-left{
+                    width: 25%;
+                    @media screen and (max-width: $mq-size-1400) {
+                        width: 35%;
+                    }
+                    @media screen and (max-width: $mq-size-1200) {
+                        width: 45%;
+                    }
+                    @media screen and (max-width: $mq-size-992) {
+                        width: 50%;
+                    }
+                    &-image{
+                        @include setSize(80%, 80%);
+                        @include setFlex;
+                        @media screen and (max-width: $mq-size-576) {
+                            @include setSize(100%, 100%);
+                        }
+                        img{
+                            @include setImage;
+                            transform: rotateY(30deg) skewY(-20deg);
+                            transform-style: preserve-3d;
+                            border-radius: 8px;
+                            border: 8px inset $bg-fg-color-2;
+                            filter: grayscale(100%) blur(1rem);
+                            transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            
+                            &:hover{
+                                transform: rotateY(0) skewY(0);
+                                border-radius: 50px;
+                                filter: grayscale(0) blur(0);
+                                box-shadow: 0 0 35px 15px $bg-fg-color-2;
+                            }
+                        }
+                    }
+                }
+                &-right{
+                    width: 65%;
+                    @media screen and (max-width: $mq-size-1400) {
+                        width: 55%;
+                    }
+                    @media screen and (max-width: $mq-size-1200) {
+                        width: 45%;
+                    }
+                    @media screen and (max-width: $mq-size-992) {
+                        width: 90%;
+                        margin: 80px auto;
+                    }
+                    &-paragraph{
+                        text-align: center;
+                        direction: rtl;
+                        font-family: $font-text-3;
+                        p{
+                            line-height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .main-skills{
+            &-content{
+                text-align: center;
+                margin: 50px 0;
+                padding: 20px 0;
+                &-header{
+                    margin: 0 auto;
+                }
+                &-main{
+                    @include setFlex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    .swiper{
+                        width: 900px;
+                        height: auto;
+                        border-radius: 8px;
+                        position: relative;
+                        &::after{
+                            content: "<";
+                            position: absolute;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            left: 10px;
+                            top: 10px;
+                            color: $bg-fg-color-2;
+                            z-index: 10;
+                            font-size: 2.5rem;
+                            @include setFlex;
+                            font-weight: 900;
+                        }
+                        &::before{
+                            content: ">";
+                            position: absolute;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            right: 10px;
+                            top: 10px;
+                            color: $bg-fg-color-2;
+                            z-index: 10;
+                            font-size: 2.5rem;
+                            @include setFlex;
+                            font-weight: 900;
+                        }
+                        &-wrapper{
+                            .swiper-slide{
+                                font-size: 22px;
+                                font-weight: bold;
+                                @include glass2;
+                                &-card{
+                                    width: 100%;
+                                    @include setFlex(column, center, center);
+                                    &-top{
+                                        width: 100%;
+                                        @include setFlex(row, space-around, center);
+                                        margin: 20px 0;
+                                        @media screen and (max-width: $mq-size-576) {
+                                            flex-direction: column;
+                                        }
+                                        .skill-name{
+                                            font-family: $font-text-3;
+                                        }
+                                        .skill-type{
+                                            font-family: $font-text-3;
+                                        }
+                                    }
+                                    &-center{
+                                        width: 100%;
+                                        @include setFlex(row, space-around, center);
+                                        margin: 30px 0;
+                                        @media screen and (max-width: $mq-size-576) {
+                                            flex-direction: column;
+                                        }
+                                        .skill-icon{
+                                            font-size:15rem;
+                                            @media screen and (max-width: $mq-size-1200) {
+                                                font-size:12rem;
+                                            }
+                                            @media screen and (max-width: $mq-size-992) {
+                                                font-size:10rem;
+                                            }
+                                        }
+                                        .skill-icon-trans3D{
+                                            transform: perspective(400px) rotateY(35deg);
+                                        }
+                                        .skill-frameworks,
+                                        .skill-libraries{
+                                            h4{
+                                                font-family: $font-text-3;
+                                            }
+                                            &-list{
+                                                list-style: none;
+                                                font-family: $font-text-3;
+                                                font-size: 1rem;
+                                                
+                                            }
+                                        }
+                                    }
+                                    &-bottom{
+                                        width: 100%;
+                                        @include setFlex(row, space-around, center);
+                                        margin: 20px 0;
+                                        @media screen and (max-width: $mq-size-576) {
+                                            flex-direction: column;
+                                        }
+                                        .skill-real-rate{
+                                            label{
+                                                font-family: $font-text-3;
+                                                font-size: 1rem;
+                                                letter-spacing: 5px;
+                                                @media screen and (max-width: $mq-size-576) {
+                                                    letter-spacing: 2px;
+                                                }
+                                            }
+                                            progress{
+                                                color: red;
+                                                border-radius: 5px;
+                                            }
+                                            progress::-moz-progress-bar{
+                                                background-color: $bg-fg-color-1;
+                                                border-radius: 5px;
+                                            }
+                                            progress::-webkit-progress-bar{
+                                                background-color: $bg-fg-color-1;
+                                                border-radius: 5px;
+                                            }
+                                            progress::-webkit-progress-value{
+                                                background-image: linear-gradient(to left, $bg-fg-color-2, $bg-fg-color-3, $bg-fg-color-4, $bg-fg-color-5);
+                                                border-radius: 5px;
+                                            }
+
+                                        }
+                                        .skill-favor-rate{
+                                            label{
+                                                font-family: $font-text-3;
+                                                font-size: 1rem;
+                                                letter-spacing: 5px;
+                                                @media screen and (max-width: $mq-size-576) {
+                                                    letter-spacing: 2px;
+                                                }
+                                            }
+                                            progress{
+                                                color: red;
+                                                border-radius: 5px;
+                                            }
+                                            progress::-moz-progress-bar{
+                                                background-color: $bg-fg-color-1;
+                                                border-radius: 5px;
+                                            }
+                                            progress::-webkit-progress-bar{
+                                                background-color: $bg-fg-color-1;
+                                                border-radius: 5px;
+                                            }
+                                            progress::-webkit-progress-value{
+                                                background-image: linear-gradient(to left, $bg-fg-color-2, $bg-fg-color-3, $bg-fg-color-4, $bg-fg-color-5);
+                                                border-radius: 5px;
+                                            }
+                                        }
+                                    }
+                                }      
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        .main-works{
+            &-content{
+                text-align: center;
+                margin: 50px 0;
+                padding: 20px 0;
+                &-header{
+                    margin: 0 auto;
+                }
+                &-main{
+                    @include setFlex;
+                    &-container{
+                        @include setFlex(row, space-around, center);
+                        flex-wrap: wrap;
+                        .works{
+                            width: 400px;
+                            height: auto;
+                            @media screen and (max-width: $mq-size-576) {
+                                width: 100%;
+                            }
+                            @include setFlex(column, space-evenly, center);
+                            margin: 10px;
+                            @include glass;
+                            &-header{
+                                width: 90%;
+                                margin: 20px auto;
+                                margin-bottom: 50px;
+                                @include setFlex;
+                                align-self: flex-start;
+                                justify-content: space-between;
+                                &-left{
+                                    a{
+                                        text-decoration: none;
+                                        color: $bg-fg-color-2;
+                                        margin: 0 5px;
+                                        i{
+                                            font-size: 1.5rem;
+                                            @media screen and (max-width: $mq-size-768) {
+                                                font-size: 1.2rem;
+                                            }
+                                        }
+                                    }
+                                }
+                                &-right{
+                                    i{
+                                        font-size: 3.5rem;
+                                        @media screen and (max-width: $mq-size-768) {
+                                            font-size: 2.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                            &-main{
+                                width: 90%;
+                                margin: 50px auto;
+                                font-family: $font-text-3;
+                                text-align: right;
+                                &-title{
+                                    direction: rtl;
+                                    margin: 15px 0;
+                                    color: $bg-fg-color-2;
+                                    @media screen and (max-width: $mq-size-768) {
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                                &-content{
+                                    margin: 15px 0;
+                                    @media screen and (max-width: $mq-size-768) {
+                                        font-size: 1rem;
+                                    }
+                                }
+                            }
+                            &-footer{
+                                margin: 20px;
+                                &-content{
+                                    font-family: $font-text-3;
+                                    list-style: none;
+                                    @include setFlex;
+                                    justify-content: flex-end;
+                                    li{
+                                        margin: 0 5px;
+                                        font-size: 0.8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .main-licenses{
+            &-content{
+                text-align: center;
+                margin: 50px 0;
+                padding: 20px 0;
+                &-header{
+                    margin: 0 auto;
+                }
+                &-main{
+                    @include setFlex;
+                    flex-wrap: wrap;
+                    font-family: $font-text-3;
+                    .licenses{
+                        width: 500px;
+                        height: 400px;
+                        margin: 10px;
+                        @media screen and (max-width: $mq-size-576) {
+                            width: 100%;
+                        }
+                        @include glass;
+                        &-top{
+                            width: 100%;
+                            height: 80%;
+                            padding: 10px;
+                            img{
+                                @include setImage;
+                                filter: blur(0.5rem);
+                                border-radius: 8px;
+                                transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                &:hover{
+                                    filter: blur(0);
+                                }
+                            }
+                        }
+                        &-bottom{
+                            width: 90%;
+                            height: 20%;
+                            @include setFlex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            margin: 0 auto;
+                            &-content{
+                                @include setFlex;
+                                a{
+                                    margin: 0 10px;
+                                    border-bottom: none;
+                                    i{
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                            }
+                            a{
+                                display: block;
+                                text-decoration: none;
+                                color: $bg-fg-color-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .main-contact{
+            &-content{
+                text-align: center;
+                margin: 50px 0;
+                padding: 20px 0;
+                &-header{
+                    margin: 0 auto;
+                }
+                &-main{
+                    @include setFlex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    @include glass;
+                    padding: 20px;
+                    .link{
+                        a{
+                            text-decoration: none;
+                            font-size: 3.5rem;
+                            color: unset;
+                            @media screen and (max-width: $mq-size-768) {
+                                font-size: 2.5rem;
+                            }
+                        }
+                        transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        &:hover{
+                            transform: scale(1.2);
+                        }
+                    }
+                    .instagram{
+                        a{
+                            i{
+                                color: rgb(194, 14, 194);
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        @include setFlex;
+        width: 100%;
+        justify-content: space-evenly;
+        font-family: $font-text-3;
+    }
+.up-to-summary{
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    z-index: 20;
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        border-radius: 50%;
+        text-decoration: none;
+        font-family: $font-logo !important;
+        color: $bg-fg-color-2;
+        font-weight: 900;
+        font-size: 1.5rem;
+        border: 2px solid $bg-fg-color-2;
+        @media screen and (max-width: $mq-size-576) {
+            padding: 5px;
+        }
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &:hover{
+            background-color: $bg-fg-color-2;
+            color: $bg-fg-color-1;
+            transform: translate(0,-8px);
+        }
+    }
+}

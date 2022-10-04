@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Faster+One&family=Noto+Nastaliq+Urdu&display=swap');
+@font-face {
+  font-family: Vazir;
+  src: url('../font/vazir-font-v16.1.0/Vazir.eot') format('eot');
+  src: url('../font/vazir-font-v16.1.0/Vazir.ttf') format('ttf');
+  src: url('../font/vazir-font-v16.1.0/Vazir.woff') format('woff');
+  src: url('../font/vazir-font-v16.1.0/Vazir.woff2') format('woff2');
+}
+$bg-fg-color-1: #00203FFF;
+$bg-fg-color-2: #00FFFF;
+$bg-fg-color-3: #64FFDA;
+$bg-fg-color-4: #ADEFD1FF;
+$bg-fg-color-5: #CCD6F6;
+$font-logo: 'Faster One', cursive;
+$font-text-1: 'Edu NSW ACT Foundation', cursive;
+$font-text-2: 'Noto Nastaliq Urdu',  monospace;
+$font-text-3: Vazir,  monospace;
+$mq-size-1400: 1400px;
+$mq-size-1200: 1200px;
+$mq-size-992: 992px;
+$mq-size-768: 768px;
+$mq-size-576: 576px;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+hr{
+  height: 1px;
+  background-color: $bg-fg-color-2;
+  border: none;
+}
+@mixin setFlex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin setSize($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin setImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+@keyframes heart-beat {
+  0%{
+    transform: scale(1) rotateZ(0)
+  }
+  10%{
+    transform: scale(1.02) rotateZ(2deg)
+  }
+  50%{
+    transform: scale(1) rotateZ(0)
+  }
+  90%{
+    transform: scale(1.02) rotateZ(-2deg)
+  }
+  100%{
+    transform: scale(1) rotateZ(0)
+  }
+}
+/* Firefox */
+*{
+    scrollbar-width: none;
+    scrollbar-color: $bg-fg-color-3 $bg-fg-color-1;
+  }
+
+  /* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: $bg-fg-color-1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $bg-fg-color-3;
+    border-radius: 5px;
+    border: 0px inset $bg-fg-color-1;
+}
+.Section-Heading{
+  color: $bg-fg-color-5;
+  font-size: 2rem;
+  font-family: $font-text-3;
+}
+.skills{
+  width: 350px;
+  min-height: 600px;
+  border-radius: 10px;
+  background: rgba(204, 214, 246, 0.63);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.7px);
+  -webkit-backdrop-filter: blur(10.7px);
+  padding: 20px;
+  margin: 10px;
+  font-family: $font-text-3;
+}
+
+@mixin glass {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.1px);
+  -webkit-backdrop-filter: blur(10.1px);
+}
+@mixin glass2{
+  background: rgba(255, 255, 255, 0.44);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.6px);
+  -webkit-backdrop-filter: blur(16.6px);
+}
