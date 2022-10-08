@@ -1,3 +1,4 @@
+AOS.init()
 $('#hamburger-menu').on('click', function(){
     if($('#hamburger-menu').hasClass('is-active')){
         $('#hamburger-menu').removeClass('is-active');

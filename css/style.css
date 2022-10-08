@@ -113,6 +113,11 @@ hr {
 }
 
 body {
+  background: #00203f;
+  background: radial-gradient(circle, #00203f 74%, black 100%);
+}
+
+body {
   background-color: #00203FFF;
   width: 100%;
   height: auto;
@@ -143,7 +148,8 @@ header {
   margin: 20px auto;
   width: 85%;
   height: auto;
-  background-color: #00203FFF;
+  background: #00203f;
+  background: radial-gradient(circle, #00203f 56%, black 100%);
   position: -webkit-sticky;
   position: fixed;
   top: 20px;
@@ -239,7 +245,8 @@ header .header-nav-up .logo p {
 }
 
 header .header-nav-down {
-  background-color: #00203FFF;
+  background: #00203f;
+  background: radial-gradient(circle, #00203f 56%, black 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1161,10 +1168,14 @@ main .main-licenses-content-main .licenses-bottom a {
   color: #00FFFF;
 }
 
+main .main-contact {
+  margin-bottom: 0;
+}
+
 main .main-contact-content {
   text-align: center;
-  margin: 50px 0;
-  padding: 20px 0;
+  margin: 50px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 main .main-contact-content-header {
@@ -1187,6 +1198,7 @@ main .main-contact-content-main {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 50%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.15);
@@ -1196,6 +1208,7 @@ main .main-contact-content-main {
   backdrop-filter: blur(10.1px);
   -webkit-backdrop-filter: blur(10.1px);
   padding: 20px;
+  margin: 0 auto;
 }
 
 main .main-contact-content-main .link {
@@ -1205,7 +1218,7 @@ main .main-contact-content-main .link {
 
 main .main-contact-content-main .link a {
   text-decoration: none;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   color: unset;
 }
 
